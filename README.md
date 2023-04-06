@@ -7,3 +7,4 @@ Gra typu citybuilder polegająca na rozbudowywaniu osady oraz zarządzaniu jej m
     04.05 - System usług i interakcji pomiędzy budynkami
     01.06 - System zapisywania
 # 
+Poza plikami tutaj dostępnymi plikami użyte są standardowe biblioteki Unity 2d
