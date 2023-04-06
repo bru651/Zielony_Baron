@@ -6,10 +6,14 @@ public class mainmenu : MonoBehaviour
 {
     public GameObject Menu;
     public GameObject Opcje;
+    public GameObject Zapisy;
     // Start is called before the first frame update
     void Start()
     {
-        kopcje();
+        //kopcje();
+        Menu.SetActive(true);
+        Opcje.SetActive(false);
+        Zapisy.SetActive(false);
     }
 
     // Update is called once per frame
@@ -34,7 +38,19 @@ public class mainmenu : MonoBehaviour
         Menu.SetActive(true);
         Opcje.SetActive(false);
     }
-    public void wyjdü()
+    public void pzapisy()
+    {
+        // Show Credits Menu
+        Menu.SetActive(false);
+        Zapisy.SetActive(true);
+    }
+    public void kzapisy()
+    {
+        // Show Menu
+        Menu.SetActive(true);
+        Zapisy.SetActive(false);
+    }
+    public void wyjdz()
     {
         // Quit Game
         Application.Quit();
