@@ -2,18 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class mainmenu : MonoBehaviour
+public class gamemenu : MonoBehaviour
 {
     public GameObject Menu;
-    public GameObject Opcje;
-    public GameObject Zapisy;// Nie trać głowy
+    public GameObject HUD;
     // Start is called before the first frame update
     void Start()
     {
         //kopcje();
         Menu.SetActive(true);
-        Opcje.SetActive(false);
-        Zapisy.SetActive(false);
+        HUD.SetActive(true);
     }
 
     // Update is called once per frame
@@ -24,9 +22,9 @@ public class mainmenu : MonoBehaviour
     public void GRAJ()
     {
         // Play Now Button has been pressed, here you can initialize your game (For example Load a Scene called GameLevel etc.)
-        UnityEngine.SceneManagement.SceneManager.LoadScene("main");
+        Menu.SetActive(false);
     }
-    public void popcje()
+    /*public void popcje()
     {
         // Show Credits Menu
         Menu.SetActive(false);
@@ -49,10 +47,10 @@ public class mainmenu : MonoBehaviour
         // Show Menu
         Menu.SetActive(true);
         Zapisy.SetActive(false);
-    }
-    public void wyjdz()
+    }*/
+    public void wyjdzdm()
     {
         // Quit Game
-        Application.Quit();
+        UnityEngine.SceneManagement.SceneManager.LoadScene("SampleScene");
     }
 }
