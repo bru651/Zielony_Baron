@@ -1,17 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
+using TMPro;
 public class gamemenu : MonoBehaviour
 {
     public GameObject Menu;
     public GameObject HUD;
+    public GameObject buildmenu;
+    public GameObject buildciv;
+    public GameObject buildind;
+    public GameObject buildserv;
+    public TMP_Dropdown buildselect;
     // Start is called before the first frame update
     void Start()
     {
         //kopcje();
-        Menu.SetActive(true);
+        Menu.SetActive(false);
         HUD.SetActive(true);
+        buildmenu.SetActive(false);
+        buildciv.SetActive(true);
+        buildind.SetActive(false);
+        buildserv.SetActive(false);
     }
 
     // Update is called once per frame
@@ -21,28 +31,53 @@ public class gamemenu : MonoBehaviour
     }*/
     public void GRAJ()
     {
-        // Play Now Button has been pressed, here you can initialize your game (For example Load a Scene called GameLevel etc.)
+        // Play Now Button 
         Menu.SetActive(false);
+        HUD.SetActive(true);
+        //buildmenu.SetActive
     }
-    /*public void popcje()
-    {
-        // Show Credits Menu
-        Menu.SetActive(false);
-        Opcje.SetActive(true);
-    }
-    public void kopcje()
+    public void menubutton()
     {
         // Show Menu
         Menu.SetActive(true);
-        Opcje.SetActive(false);
+        HUD.SetActive(false);
     }
-    public void pzapisy()
+    public void buildbutton()
     {
-        // Show Credits Menu
-        Menu.SetActive(false);
-        Zapisy.SetActive(true);
+        // Show buildMenu
+        if(buildmenu.activeSelf)
+        {
+            buildmenu.SetActive(false);
+        }
+        else
+        {
+            buildmenu.SetActive(true);
+        }
     }
-    public void kzapisy()
+    public void opcjebudowy()
+    {
+        // wybiera zakładkę budynków
+        int val=buildselect.value;
+        if(val==0)
+        {
+            buildciv.SetActive(true);
+            buildind.SetActive(false);
+            buildserv.SetActive(false);
+        }
+        if(val==1)
+        {
+            buildciv.SetActive(false);
+            buildind.SetActive(true);
+            buildserv.SetActive(false);
+        }
+        if(val==2)
+        {
+            buildciv.SetActive(false);
+            buildind.SetActive(false);
+            buildserv.SetActive(true);
+        }
+    }
+    /*public void kzapisy()
     {
         // Show Menu
         Menu.SetActive(true);
